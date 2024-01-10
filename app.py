@@ -13,7 +13,7 @@ app.secret_key = 'your_secret_key'  # Replace with a secret key for flash messag
 class ImageProcessingApp:
     def __init__(self):
         self.image_path = None
-        self.threshold = 0.75
+        self.threshold = 0.70
 
     def process_image(self):
         if not self.image_path:
@@ -72,7 +72,7 @@ class ImageProcessingApp:
             template = cv2.convertScaleAbs(template)
 
             # Apply template matching
-            result = cv2.matchTemplate(target_image, template, cv2.TM_CCOEFF_NORMED)
+            result = cv2.matchTemplate(target_image, template, cv2.cv2.TM_SQDIFF)
             locations = np.where(result >= threshold)
             locations = list(zip(*locations[::-1]))
 
