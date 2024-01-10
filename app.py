@@ -72,7 +72,7 @@ class ImageProcessingApp:
             template = cv2.convertScaleAbs(template)
 
             # Apply template matching
-            result = cv2.matchTemplate(target_image, template, cv2.TM_CCORR)
+            result = cv2.matchTemplate(target_image, template, cv2.TM_CCOEFF_NORMED)
             locations = np.where(result >= threshold)
             locations = list(zip(*locations[::-1]))
 
