@@ -23,7 +23,7 @@ class ImageProcessingApp:
         print("Processing image path:", self.image_path)  # Add this line for debugging
 
         # Load the source image
-        source_path = r"C:\Users\admin\Desktop\Sample_model\logo detection\P_80204011000000927.tiff"
+        source_path = r"P_80204011000000927.tiff"
         source_image = cv2.imread(source_path, cv2.IMREAD_GRAYSCALE)
         if source_image is None:
             flash(f"Unable to read the source image {source_path}", 'error')
@@ -51,7 +51,7 @@ class ImageProcessingApp:
         target_image = cv2.convertScaleAbs(target_image)
 
         # Load all template images in the specified folder
-        templates_folder = r"C:\Users\admin\Desktop\Sample_model\logo detection\Logos"
+        templates_folder = r"Logos"
         template_files = [f for f in os.listdir(templates_folder) if f.endswith((".jpg", ".jpeg", ".png", ".tiff"))]
 
         # Set the threshold for template matching
