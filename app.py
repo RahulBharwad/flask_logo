@@ -13,7 +13,7 @@ app.secret_key = 'your_secret_key'  # Replace with a secret key for flash messag
 class ImageProcessingApp:
     def __init__(self):
         self.image_path = None
-        self.threshold = 0.70
+        self.threshold = 0.75
 
     def process_image(self):
         if not self.image_path:
